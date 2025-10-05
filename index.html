@@ -64,55 +64,55 @@
             <button class="close-menu" id="closeMenu">✕</button>
         </div>
 
-        <nav class="mobile-nav-links">
-            <a href="#home" data-translate="nav-home">
-                <span>🏠</span>
-                <span>Início</span>
-            </a>
-            <a href="#about" data-translate="nav-about">
-                <span>👨‍💻</span>
-                <span>Sobre</span>
-            </a>
-            <a href="#skills" data-translate="nav-skills">
-                <span>⚡</span>
-                <span>Skills</span>
-            </a>
-            <a href="#projects" data-translate="nav-projects">
-                <span>🚀</span>
-                <span>Projetos</span>
-            </a>
-            <a href="#contact" data-translate="nav-contact">
-                <span>💬</span>
-                <span>Contato</span>
-            </a>
-        </nav>
+        <div class="mobile-menu-scrollable-content">
+            <nav class="mobile-nav-links">
+                <a href="#home" data-translate="nav-home">
+                    <span>🏠</span>
+                    <span>Início</span>
+                </a>
+                <a href="#about" data-translate="nav-about">
+                    <span>👨‍💻</span>
+                    <span>Sobre</span>
+                </a>
+                <a href="#skills" data-translate="nav-skills">
+                    <span>⚡</span>
+                    <span>Skills</span>
+                </a>
+                <a href="#projects" data-translate="nav-projects">
+                    <span>🚀</span>
+                    <span>Projetos</span>
+                </a>
+                <a href="#contact" data-translate="nav-contact">
+                    <span>💬</span>
+                    <span>Contato</span>
+                </a>
+            </nav>
 
-        <div class="mobile-controls">
-            <div class="control-group">
-                <div class="control-label" data-translate="theme-label">Tema</div>
-                <div class="mobile-theme-toggle">
-                    <div class="theme-info">
-                        <span id="themeIcon">🌙</span>
-                        <span id="themeText" data-translate="theme-dark">Modo Escuro</span>
+            <div class="mobile-controls">
+                <div class="control-group">
+                    <div class="control-label" data-translate="theme-label">Tema</div>
+                    <div class="mobile-theme-toggle">
+                        <div class="theme-info">
+                        </div>
+                        <div class="theme-switch" id="themeSwitch"></div>
                     </div>
-                    <div class="theme-switch" id="themeSwitch"></div>
                 </div>
-            </div>
 
-            <div class="control-group">
-                <div class="control-label" data-translate="language-label">Idioma</div>
-                <div class="mobile-lang-selector">
-                    <div class="lang-option active" data-lang="pt">
-                        <span class="lang-flag">🇧🇷</span>
-                        <span class="lang-name">Português</span>
-                    </div>
-                    <div class="lang-option" data-lang="en">
-                        <span class="lang-flag">🇺🇸</span>
-                        <span class="lang-name">English</span>
-                    </div>
-                    <div class="lang-option" data-lang="ja">
-                        <span class="lang-flag">🇯🇵</span>
-                        <span class="lang-name">日本語</span>
+                <div class="control-group">
+                    <div class="control-label" data-translate="language-label">Idioma</div>
+                    <div class="mobile-lang-selector">
+                        <div class="lang-option active" data-lang="pt">
+                            <span class="lang-flag">🇧🇷</span>
+                            <span class="lang-name">Português</span>
+                        </div>
+                        <div class="lang-option" data-lang="en">
+                            <span class="lang-flag">🇺🇸</span>
+                            <span class="lang-name">English</span>
+                        </div>
+                        <div class="lang-option" data-lang="ja">
+                            <span class="lang-flag">🇯🇵</span>
+                            <span class="lang-name">日本語</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -155,7 +155,7 @@
                     </div>
                     <div class="code-content">
                         <div class="code-line">
-                            <span class="comment">// Desenvolvedor Frontend apaixonado por tecnologia</span>
+                            <span class="comment" data-translate="about-comment">// Desenvolvedor Frontend apaixonado por tecnologia</span>
                         </div>
                         <div class="code-line">
                             <span class="keyword">const</span> <span class="function">developer</span> = {
@@ -167,10 +167,13 @@
                             <span class="property">role</span>: <span class="string" data-translate="about-role">"Frontend Developer"</span>,
                         </div>
                         <div class="code-line" style="margin-left: 2rem;">
-                            <span class="property">experience</span>: <span class="string">"6+ anos"</span>,
+                            <span class="property">experience</span>: <span class="string" data-translate="about-experience">"6+ anos"</span>,
                         </div>
                         <div class="code-line" style="margin-left: 2rem;">
-                            <span class="property">location</span>: <span class="string">"Maranhão, Brasil"</span>,
+                            <span class="property">location</span>: <span class="string" data-translate="about-location">"Maranhão, Brasil"</span>,
+                        </div>
+                        <div class="code-line" style="margin-left: 2rem;">
+                            <span class="property">formation</span>: <span class="string" data-translate="about-formation">"Ciência da Computação"</span>,
                         </div>
                         <div class="code-line" style="margin-left: 2rem;">
                             <span class="property">passion</span>: <span class="string" data-translate="about-passion">"UI/UX e Performance"</span>,
