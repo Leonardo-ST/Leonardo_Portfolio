@@ -134,11 +134,36 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function autoSetLanguage() {
-        const browserLang = navigator.language.split('-')[0];
-        if (browserLang === 'ja') setLanguage('ja');
-        else if (browserLang === 'pt') setLanguage('pt');
-        else setLanguage('en');
+    // Função assíncrona para detectar o idioma por IP e, como fallback, pelo navegador
+    async function autoSetLanguage() {
+        try {
+            // 1. Tenta detectar o idioma pela localização do IP
+            const response = await fetch('http://ip-api.com/json/?fields=countryCode');
+            if (!response.ok) {
+                throw new Error('IP API request failed');
+            }
+            const data = await response.json();
+            const country = data.countryCode;
+
+            if (country === 'JP') {
+                setLanguage('ja');
+                return;
+            }
+            if (country === 'BR') {
+                setLanguage('pt');
+                return;
+            }
+            // Para qualquer outro país, define inglês
+            setLanguage('en');
+
+        } catch (error) {
+            // 2. Se a API falhar, usa o idioma do navegador como fallback
+            console.error('GeoIP detection failed, falling back to browser language:', error);
+            const browserLang = navigator.language.split('-')[0];
+            if (browserLang === 'ja') setLanguage('ja');
+            else if (browserLang === 'pt') setLanguage('pt');
+            else setLanguage('en');
+        }
     }
 
     // --- Theme ---
