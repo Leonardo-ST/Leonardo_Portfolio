@@ -49,7 +49,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Animated Background */
+
 .bg-animation {
     position: fixed;
     top: 0;
@@ -86,7 +86,7 @@ body {
     }
 }
 
-/* Header */
+
 .header {
     position: fixed;
     top: 0;
@@ -192,7 +192,7 @@ body {
     transform: rotate(-45deg) translate(7px, -6px);
 }
 
-/* Mobile Menu */
+
 .mobile-menu {
     position: fixed;
     top: 0;
@@ -1139,4 +1139,5 @@ body {
         text-align: center;
         gap: 0.5rem;
     }
+
 }
