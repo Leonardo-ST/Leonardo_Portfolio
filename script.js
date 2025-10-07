@@ -1,41 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // =========================================================================
-    // STATE
-    // =========================================================================
+
     let currentLang = 'pt';
-    let currentTheme = 'dark';
-
-    // =========================================================================
-    // ELEMENTS
-    // =========================================================================
+    let currentTheme = 'dark'
     const body = document.body;
-
-    // Background Animation
     const bgAnimation = document.getElementById('bgAnimation');
-
-    // Mobile Menu
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
     const menuOverlay = document.getElementById('menuOverlay');
     const closeMenu = document.getElementById('closeMenu');
     const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
-
-    // Theme Toggles
     const desktopThemeToggle = document.getElementById('desktopThemeToggle');
     const desktopThemeIcon = document.getElementById('desktopThemeIcon');
     const mobileThemeSwitch = document.getElementById('themeSwitch');
     const mobileThemeInfo = document.querySelector('.mobile-theme-toggle .theme-info');
-
-    // Language Selectors
     const desktopLangSelector = document.getElementById('desktopLangSelector');
     const selectedLangDisplay = document.getElementById('selectedLang');
     const langDropdown = document.getElementById('langDropdown');
     const mobileLangOptions = document.querySelectorAll('.mobile-lang-selector .lang-option');
-
-    // =========================================================================
-    // TRANSLATIONS
-    // =========================================================================
     const translations = {
         pt: {
             'nav-home': 'Início', 'nav-about': 'Sobre', 'nav-skills': 'Skills', 'nav-projects': 'Projetos', 'nav-contact': 'Contato',
@@ -90,20 +72,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // =========================================================================
-    // FUNCTIONS
-    // =========================================================================
 
-    // --- Language ---
+    // Funções
+    // Idioma
     function setLanguage(lang) {
         currentLang = lang;
         document.documentElement.lang = lang;
 
-        // Update all translatable elements
+    
         document.querySelectorAll('[data-translate]').forEach(el => {
             const key = el.getAttribute('data-translate');
             if (translations[lang] && translations[lang][key]) {
-                // Handle special cases like the about-me section
+    
                 if (el.classList.contains('string')) {
                     el.textContent = `"${translations[lang][key]}"`;
                 } else {
@@ -117,12 +97,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateLangSelectorDisplay() {
-        // Update mobile selector
         mobileLangOptions.forEach(opt => {
             opt.classList.toggle('active', opt.getAttribute('data-lang') === currentLang);
         });
 
-        // Update desktop selector
+        
         const activeDesktopOption = document.querySelector(`.lang-dropdown li[data-lang="${currentLang}"]`);
         if (activeDesktopOption) {
             document.querySelectorAll('.lang-dropdown li').forEach(opt => opt.classList.remove('active'));
@@ -257,4 +236,5 @@ document.addEventListener('DOMContentLoaded', () => {
     // =========================================================================
     autoSetLanguage();
     setInterval(createFloatingCode, 2000);
+
 });
