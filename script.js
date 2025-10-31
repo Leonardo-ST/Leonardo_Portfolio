@@ -1,6 +1,17 @@
+// Preloader
+window.addEventListener('load', () => {
+    const preloader = document.querySelector('.preloader');
+    if (preloader) {
+        setTimeout(() => {
+            preloader.classList.add('fade-out');
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
+        }, 2000);
+    }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
-
-
     let currentLang = 'pt';
     let currentTheme = 'dark'
     const body = document.body;

@@ -1,0 +1,20 @@
+RewriteEngine On
+
+# Redirecionar a raiz para o idioma apropriado baseado no navegador
+RewriteCond %{REQUEST_URI} ^/$
+RewriteCond %{HTTP:Accept-Language} ^pt [NC]
+RewriteRule ^ /pt/ [L,R=302]
+
+RewriteCond %{REQUEST_URI} ^/$
+RewriteCond %{HTTP:Accept-Language} ^ja [NC]
+RewriteRule ^ /ja/ [L,R=302]
+
+RewriteCond %{REQUEST_URI} ^/$
+RewriteRule ^ /en/ [L,R=302]
+
+# Regras para cada idioma
+RewriteRule ^(pt|en|ja)/?$ $1/index.html [L]
+RewriteRule ^(pt|en|ja)/(.*)$ $1/index.html [L]
+
+# Redirecionar 404 para a página inicial em inglês
+ErrorDocument 404 /en/

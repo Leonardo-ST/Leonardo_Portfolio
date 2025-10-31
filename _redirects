@@ -1,0 +1,10 @@
+# Redirecionamento de idiomas
+/*  /index.html  200
+
+# Páginas específicas de idioma
+/pt/*  /pt/index.html  200
+/en/*  /en/index.html  200
+/ja/*  /ja/index.html  200
+
+# Fallback para 404
+/*  /en/index.html  404

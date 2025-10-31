@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leonardo - Front-end Developer</title>
+    <meta property="og:site_name" content="Leonardo Dev" />
+    <meta name="description" content="Portfólio de Leonardo S. Tavares, desenvolvedor web e criador de projetos em React e Next.js.">
+    <meta name="author" content="Leonardo Soares Tavares">
+    <link rel="stylesheet" href="../style.css">
+        }
+        .loader p {
+            margin-top: 1rem;
+            color: #a0a9c0;
+        }
+    </style>
+</head>
+
+
+<body data-theme="dark">
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <svg class="preloader-spinner" viewBox="0 0 50 50">
+                <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="4"></circle>
+            </svg>
+            <div class="preloader-text">Carregando...</div>
+        </div>
+    </div>
+
+    <div class="bg-animation" id="bgAnimation"></div>
+    
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">Leonardo Dev</div>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" data-translate="nav-home">Início</a></li>
+                <li><a href="#about" data-translate="nav-about">Sobre</a></li>
+                <li><a href="#skills" data-translate="nav-skills">Skills</a></li>
+                <li><a href="#projects" data-translate="nav-projects">Projetos</a></li>
+                <li><a href="#contact" data-translate="nav-contact">Contato</a></li>
+            </ul>
+
+            <!-- Desktop Controls -->
+            <div class="desktop-controls">
+                <div class="desktop-theme-toggle" id="desktopThemeToggle">
+                    <span id="desktopThemeIcon">🌙</span>
+                </div>
+                <div class="desktop-lang-selector" id="desktopLangSelector">
+                    <div class="selected-lang" id="selectedLang">
+                        <span class="lang-flag" id="selectedLangFlag">🇧🇷</span>
+                        <span class="lang-name" id="selectedLangName">PT</span>
+                    </div>
+                    <ul class="lang-dropdown" id="langDropdown">
+                        <li data-lang="pt" class="active">
+                            <span class="lang-flag">🇧🇷</span>
+                            <span class="lang-name">Português</span>
+                        </li>
+                        <li data-lang="en">
+                            <span class="lang-flag">🇺🇸</span>
+                            <span class="lang-name">English</span>
+                        </li>
+                        <li data-lang="ja">
+                            <span class="lang-flag">🇯🇵</span>
+                            <span class="lang-name">日本語</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <div class="logo">LeonardoDev</div>
+            <button class="close-menu" id="closeMenu">✕</button>
+        </div>
+
+        <div class="mobile-menu-scrollable-content">
+            <nav class="mobile-nav-links">
+                <a href="#home" data-translate="nav-home">
+                    <span>🏠</span>
+                    <span>Início</span>
+                </a>
+                <a href="#about" data-translate="nav-about">
+                    <span>👨‍💻</span>
+                    <span>Sobre</span>
+                </a>
+                <a href="#skills" data-translate="nav-skills">
+                    <span>⚡</span>
+                    <span>Skills</span>
+                </a>
+                <a href="#projects" data-translate="nav-projects">
+                    <span>🚀</span>
+                    <span>Projetos</span>
+                </a>
+                <a href="#contact" data-translate="nav-contact">
+                    <span>💬</span>
+                    <span>Contato</span>
+                </a>
+            </nav>
+
+            <div class="mobile-controls">
+                <div class="control-group">
+                    <div class="control-label" data-translate="theme-label">Tema</div>
+                    <div class="mobile-theme-toggle">
+                        <div class="theme-info">
+                        </div>
+                        <div class="theme-switch" id="themeSwitch"></div>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <div class="control-label" data-translate="language-label">Idioma</div>
+                    <div class="mobile-lang-selector">
+                        <div class="lang-option active" data-lang="pt">
+                            <span class="lang-flag">🇧🇷</span>
+                            <span class="lang-name">Português</span>
+                        </div>
+                        <div class="lang-option" data-lang="en">
+                            <span class="lang-flag">🇺🇸</span>
+                            <span class="lang-name">English</span>
+                        </div>
+                        <div class="lang-option" data-lang="ja">
+                            <span class="lang-flag">🇯🇵</span>
+                            <span class="lang-name">日本語</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="main">
+        <div class="container">
+            <section id="home" class="hero">
+                <div class="hero-content">
+                    <div class="hero-greeting" data-translate="hero-greeting">console.log("Olá, mundo!");</div>
+                    <h1 class="hero-title" data-translate="hero-title">Frontend Developer</h1>
+                    <p class="hero-subtitle" data-translate="hero-subtitle">Criando experiências digitais incríveis</p>
+                    <p class="hero-description" data-translate="hero-description">
+                        Especializado em React, Vue.js e tecnologias modernas de frontend. 
+                        Transformo designs em interfaces interativas e responsivas.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="#projects" class="cta-button" data-translate="hero-cta1">
+                            <span>🚀</span>
+                            <span>Ver Projetos</span>
+                        </a>
+                        <a href="#contact" class="cta-button secondary" data-translate="hero-cta2">
+                            <span>💬</span>
+                            <span>Fale Comigo</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about" class="section">
+                <div class="code-window">
+                    <div class="code-header">
+                        <div class="code-dots">
+                            <div class="dot red"></div>
+                            <div class="dot yellow"></div>
+                            <div class="dot green"></div>
+                        </div>
+                        <div class="code-title">about-me.js</div>
+                    </div>
+                    <div class="code-content">
+                        <div class="code-line">
+                            <span class="comment" data-translate="about-comment">// Desenvolvedor Frontend apaixonado por tecnologia</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="keyword">const</span> <span class="function">developer</span> = {
+                        </div>
+                        <div class="code-line" style="margin-left: 2rem;">
+                            <span class="property">name</span>: <span class="string">"Leonardo Soares Tavares"</span>,
+                        </div>
+                        <div class="code-line" style="margin-left: 2rem;">
+                            <span class="property">role</span>: <span class="string" data-translate="about-role">"Frontend Developer"</span>,
+                        </div>
+                        <div class="code-line" style="margin-left: 2rem;">
+                            <span class="property">experience</span>: <span class="string" data-translate="about-experience">"6+ anos"</span>,
+                        </div>
+                        <div class="code-line" style="margin-left: 2rem;">
+                            <span class="property">location</span>: <span class="string" data-translate="about-location">"Maranhão, Brasil"</span>,
+                        </div>
+                        <div class="code-line" style="margin-left: 2rem;">
+                            <span class="property">formation</span>: <span class="string" data-translate="about-formation">"Ciência da Computação"</span>,
+                        </div>
+                        <div class="code-line" style="margin-left: 2rem;">
+                            <span class="property">passion</span>: <span class="string" data-translate="about-passion">"UI/UX e Performance"</span>,
+                        </div>
+                        <div class="code-line" style="margin-left: 2rem;">
+                            <span class="property">currentFocus</span>: <span class="string" data-translate="about-focus">"React & Next.js"</span>
+                        </div>
+                        <div class="code-line">};</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills" class="section">
+                <h2 class="section-title" data-translate="skills-title">Minhas Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon">⚛️</div>
+                        <h3 class="skill-title">Frontend Frameworks</h3>
+                        <p class="skill-description" data-translate="skill1-desc">
+                            Desenvolvimento com as principais bibliotecas e frameworks modernos
+                        </p>
+                        <div class="skill-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">Nuxt.js</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon">🎨</div>
+                        <h3 class="skill-title">UI/UX Design</h3>
+                        <p class="skill-description" data-translate="skill2-desc">
+                            Criação de interfaces intuitivas e experiências de usuário excepcionais
+                        </p>
+                        <div class="skill-tech">
+                            <span class="tech-tag">Figma</span>
+                            <span class="tech-tag">Adobe XD</span>
+                            <span class="tech-tag">Tailwind</span>
+                            <span class="tech-tag">Styled Components</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon">📱</div>
+                        <h3 class="skill-title">Responsive Design</h3>
+                        <p class="skill-description" data-translate="skill3-desc">
+                            Desenvolvimento de aplicações que funcionam perfeitamente em todos os dispositivos
+                        </p>
+                        <div class="skill-tech">
+                            <span class="tech-tag">CSS Grid</span>
+                            <span class="tech-tag">Flexbox</span>
+                            <span class="tech-tag">Media Queries</span>
+                            <span class="tech-tag">Mobile First</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon">⚡</div>
+                        <h3 class="skill-title">Performance</h3>
+                        <p class="skill-description" data-translate="skill4-desc">
+                            Otimização de aplicações para máxima velocidade e eficiência
+                        </p>
+                        <div class="skill-tech">
+                            <span class="tech-tag">Webpack</span>
+                            <span class="tech-tag">Vite</span>
+                            <span class="tech-tag">Lazy Loading</span>
+                            <span class="tech-tag">PWA</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects" class="section">
+                <h2 class="section-title" data-translate="projects-title">Meus Projetos</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image">🛍️</div>
+                        <div class="project-content">
+                            <h3 class="project-title" data-translate="project1-title">E-commerce Moderno</h3>
+                            <p class="project-description" data-translate="project1-desc">
+                                Plataforma de e-commerce completa com carrinho de compras, sistema de pagamento e painel administrativo.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Redux</span>
+                                <span class="tech-tag">Stripe</span>
+                                <span class="tech-tag">Tailwind</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    <span>🔗</span>
+                                    <span>Demo</span>
+                                </a>
+                                <a href="#" class="project-link">
+                                    <span>📁</span>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">📊</div>
+                        <div class="project-content">
+                            <h3 class="project-title" data-translate="project2-title">Dashboard Analytics</h3>
+                            <p class="project-description" data-translate="project2-desc">
+                                Dashboard interativo para visualização de dados com gráficos dinâmicos e relatórios em tempo real.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Vue.js</span>
+                                <span class="tech-tag">Chart.js</span>
+                                <span class="tech-tag">Vuex</span>
+                                <span class="tech-tag">SCSS</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    <span>🔗</span>
+                                    <span>Demo</span>
+                                </a>
+                                <a href="#" class="project-link">
+                                    <span>📁</span>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">🎵</div>
+                        <div class="project-content">
+                            <h3 class="project-title" data-translate="project3-title">Music Player App</h3>
+                            <p class="project-description" data-translate="project3-desc">
+                                Player de música moderno com playlists personalizadas, visualizador de áudio e controles avançados.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Web Audio API</span>
+                                <span class="tech-tag">Framer Motion</span>
+                                <span class="tech-tag">CSS Modules</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    <span>🔗</span>
+                                    <span>Demo</span>
+                                </a>
+                                <a href="#" class="project-link">
+                                    <span>📁</span>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="section">
+                <div class="contact">
+                    <h2 class="contact-title" data-translate="contact-title">Vamos trabalhar juntos?</h2>
+                    <p class="contact-description" data-translate="contact-description">
+                        Estou sempre aberto a novos projetos e oportunidades. Entre em contato!
+                    </p>
+                    <div class="contact-links">
+                        <a href="mailto:contact@leonardodev.fun" class="contact-link">
+                            <span>📧</span>
+                            <span>Email</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/leonardo-soares-tavares-26232a229/" target="_blank" rel="noopener noreferrer" class="contact-link">
+                            <span>💼</span>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/Leonardo-ST" target="_blank" rel="noopener noreferrer" class="contact-link">
+                            <span>🐙</span>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://wa.me/98920028190" target="_blank" rel="noopener noreferrer" class="contact-link">
+                            <span>📞</span>
+                            <span>WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo">Leonardo Dev</div>
+                    <p class="footer-tagline" data-translate="footer-tagline">Criando o futuro, uma linha de código por vez</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4 data-translate="footer-navigation">Navegação</h4>
+                        <ul>
+                            <li><a href="#home" data-translate="nav-home">Início</a></li>
+                            <li><a href="#about" data-translate="nav-about">Sobre</a></li>
+                            <li><a href="#skills" data-translate="nav-skills">Skills</a></li>
+                            <li><a href="#projects" data-translate="nav-projects">Projetos</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4 data-translate="footer-connect">Conecte-se</h4>
+                        <ul>
+                            <li><a href="mailto:contact@gmail.fun">Email</a></li>
+                            <li><a href="https://www.linkedin.com/in/leonardo-soares-tavares-26232a229/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                            <li><a href="https://github.com/Leonardo-ST" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                            <li><a href="https://wa.me/98920028190" target="_blank" rel="noopener noreferrer">Whatsapp</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-divider"></div>
+                <div class="footer-credits">
+                    <p>&copy; 2025 Leonardo S. Tavares. <span data-translate="footer-rights">Todos os direitos reservados.</span></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/language.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html>

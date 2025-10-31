@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leonardo Dev</title>
+    <style>
+        :root {
+            --bg-primary: #0a0e27;
+            --accent: #64ffda;
+            --text-secondary: #a0a9c0;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: var(--bg-primary);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        .preloader {
+            text-align: center;
+            animation: fadeIn 0.5s ease-in;
+        }
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid var(--accent);
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        .message {
+            color: var(--accent);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        .submessage {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="preloader">
+        <div class="spinner"></div>
+        <div class="message">Leonardo Dev</div>
+        <div class="submessage">Redirecionando... / Redirecting... / リダイレクト中...</div>
+    </div>
+
+    <script>
+        function getBrowserLanguage() {
+            try {
+                const lang = navigator.language.toLowerCase();
+                if (lang.startsWith('pt')) return 'pt';
+                if (lang.startsWith('ja')) return 'ja';
+                return 'en';
+            } catch (e) {
+                return 'en';
+            }
+        }
+
+        function redirectToLanguage() {
+            const supportedLanguages = ['pt', 'en', 'ja'];
+            const path = window.location.pathname;
+            const currentLang = path.split('/')[1];
+            
+            if (supportedLanguages.includes(currentLang)) {
+                return;
+            }
+
+            const browserLang = getBrowserLanguage();
+            const baseUrl = window.location.origin;
+            window.location.href = `${baseUrl}/${browserLang}/`;
+        }
+
+        window.addEventListener('load', redirectToLanguage);
+    </script>
+</body>
+</html>
