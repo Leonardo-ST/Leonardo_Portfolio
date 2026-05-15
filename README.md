@@ -35,8 +35,6 @@ Personalização rápida
 Contribuições
 - Pull requests são bem-vindos. Abra uma issue para discutir mudanças maiores antes de implementar.
 
-Licença
-- Conteúdo do repositório: coloque a licença desejada aqui (ex.: MIT). Se preferir, posso adicionar um arquivo `LICENSE` padrão.
 
 Contato
 - Email: contact@leonardodev.fun
@@ -46,4 +44,3 @@ Contato
 
 Notas do projeto
 - O site já inclui detecção automática de idioma por GeoIP com fallback para o idioma do navegador.
-- Se quiser, posso: adicionar um `package.json` para scripts de dev, criar um workflow de GitHub Pages, ou gerar um README em inglês também.
