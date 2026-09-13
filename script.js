@@ -1,5 +1,39 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    const rikkaCard = document.querySelector('.project-card-rikka');
+    const rikkaFrame = document.querySelector('.project-live-iframe');
+    const rikkaFrameWrapper = document.querySelector('.live-preview-frame');
+    const rikkaFallback = document.querySelector('.project-image-fallback');
+
+    function resizeRikkaPreview() {
+        if (!rikkaCard || !rikkaFrame || !rikkaFrameWrapper || !rikkaFallback) {
+            return;
+        }
+
+        const cardWidth = rikkaCard.querySelector('.project-image').getBoundingClientRect().width;
+        const baseWidth = 1440;
+        const scale = Math.max(0.2, Math.min(1, cardWidth / baseWidth));
+
+        rikkaFrame.width = baseWidth;
+        rikkaFrame.height = 900;
+        rikkaFrameWrapper.style.width = `${baseWidth}px`;
+        rikkaFrameWrapper.style.height = `${900}px`;
+        rikkaFrameWrapper.style.transform = `scale(${scale})`;
+        rikkaFrameWrapper.style.transformOrigin = 'top left';
+    }
+
+    if (rikkaFrame) {
+        rikkaFrame.addEventListener('load', () => {
+            rikkaFallback.classList.remove('visible');
+        });
+
+        rikkaFrame.addEventListener('error', () => {
+            rikkaFallback.classList.add('visible');
+        });
+    }
+
+    resizeRikkaPreview();
+    window.addEventListener('resize', resizeRikkaPreview);
 
     let currentLang = 'pt';
     let currentTheme = 'dark'

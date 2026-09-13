@@ -732,6 +732,98 @@ body {
     100% { transform: translateX(100%); }
 }
 
+.project-card-rikka .project-image-rikka {
+    background: radial-gradient(circle at top left, var(--accent), var(--purple));
+}
+
+.live-preview-shell {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.live-preview-browser {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 34px;
+    background: rgba(15, 23, 42, 0.82);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0 1rem;
+}
+
+.browser-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--text-secondary);
+}
+
+.browser-dot-red { background: #fb7185; }
+.browser-dot-yellow { background: #fbbf24; }
+.browser-dot-green { background: #34d399; }
+
+.browser-address {
+    margin-left: auto;
+    color: var(--text-secondary);
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+}
+
+.live-preview-frame {
+    position: absolute;
+    inset: 34px 0 0 0;
+    transform-origin: top left;
+}
+
+.project-live-iframe {
+    width: 1440px;
+    height: 900px;
+    border: 0;
+    display: block;
+    background: var(--bg-secondary);
+    pointer-events: none;
+    transform-origin: top left;
+}
+
+.project-image-fallback {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: white;
+    background: radial-gradient(circle, rgba(190, 120, 255, 0.6), rgba(40, 20, 90, 0.9));
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.project-card-rikka .project-image-fallback.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.fallback-icon {
+    font-size: 4rem;
+}
+
+.fallback-title {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
 .project-content {
     padding: 2rem;
 }
