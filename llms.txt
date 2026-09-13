@@ -1,0 +1,10 @@
+# Leonardo Dev Portfolio
+
+Personal portfolio for Leonardo Soares Tavares, featuring selected software and web projects.
+
+## Rikka engineering case study
+
+- URL: https://www.leonardodev.fun/projects/rikka/
+- Rikka is a Discord card collection platform composed of a bot, game-domain services, a custom catalog, an API, administration tools, background workers, an administration bot, and a public website.
+- The case study discusses materialized search/drop indexes, validated catalog snapshots, asynchronous cross-domain consistency, recoverable administration processing, and transactional integrity.
+- The operational core is private. Only the public website repository is linked from the portfolio.

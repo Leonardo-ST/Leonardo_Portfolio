@@ -37,8 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
     resizeLivePreviews();
     window.addEventListener('resize', resizeLivePreviews);
 
-    let currentLang = 'pt';
-    let currentTheme = 'dark'
+    let currentLang = window.PortfolioPreferences?.getLanguage() ?? 'pt';
+    let currentTheme = window.PortfolioPreferences?.getTheme() ?? 'dark';
     const body = document.body;
     const bgAnimation = document.getElementById('bgAnimation');
     const hamburger = document.getElementById('hamburger');
@@ -76,7 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 rikka: {
                     title: 'Rikka',
-                    description: 'Site oficial da Rikka, um bot de coleção de cartas para Discord com personagens de animes e jogos, drops, diferentes edições, wishlist e trades.'
+                    description: 'Plataforma de coleção de cartas para Discord, com bot, catálogo próprio, API, sistema administrativo e website.',
+                    caseLabel: 'Ver case'
                 }
             },
             'contact-title': 'Vamos trabalhar juntos?', 'contact-description': 'Estou sempre aberto a novos projetos e oportunidades. Entre em contato!',
@@ -105,7 +106,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 rikka: {
                     title: 'Rikka',
-                    description: 'Official website for Rikka, a Discord card collection bot featuring characters from anime and games, with drops, multiple editions, wishlists, and trades.'
+                    description: 'Discord card collection platform with a bot, custom catalog, API, administration system, and website.',
+                    caseLabel: 'View case'
                 }
             },
             'contact-title': 'Let\'s work together?', 'contact-description': 'I\'m always open to new projects and opportunities. Get in touch!',
@@ -134,7 +136,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 rikka: {
                     title: 'Rikka',
-                    description: 'アニメやゲームのキャラクターカードを集めるDiscordボット「Rikka」の公式サイト。ドロップ、複数のエディション、ウィッシュリスト、トレード機能に対応しています。'
+                    description: 'Discord向けのカード収集プラットフォーム。ボット、独自カタログ、API、管理システム、Webサイトで構成されています。',
+                    caseLabel: 'ケースを見る'
                 }
             },
             'contact-title': '一緒に働きませんか？', 'contact-description': '新しいプロジェクトや機会には常にオープンです。お気軽にお問い合わせください！',
@@ -201,6 +204,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 const descriptionElement = card.querySelector('.project-description');
                 if (descriptionElement) descriptionElement.textContent = description;
             }
+
+            const caseLink = card.querySelector('[data-project-case-link]');
+            if (caseLink) {
+                const caseLabel = t(`projects.${project.id}.caseLabel`);
+                if (caseLabel) caseLink.textContent = caseLabel;
+            }
         });
     }
 
@@ -208,6 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Idioma
     function setLanguage(lang) {
         currentLang = translations[lang] ? lang : fallbackLanguage;
+        currentLang = window.PortfolioPreferences?.setLanguage(currentLang) ?? currentLang;
         document.documentElement.lang = currentLang;
 
     
@@ -249,6 +259,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Função assíncrona para detectar o idioma por IP e, como fallback, pelo navegador
     async function autoSetLanguage() {
+        const savedLanguage = localStorage.getItem('portfolio-language');
+        if (savedLanguage && translations[savedLanguage]) {
+            setLanguage(savedLanguage);
+            return;
+        }
         try {
             // 1. Tenta detectar o idioma pela localização do IP
             const response = await fetch('http://ip-api.com/json/?fields=countryCode');
@@ -282,6 +297,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Theme ---
     function updateThemeDisplay() {
         const isDark = currentTheme === 'dark';
+        currentTheme = window.PortfolioPreferences?.setTheme(currentTheme) ?? currentTheme;
         body.setAttribute('data-theme', currentTheme);
 
         // Desktop

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rikka — Case de Engenharia | Leonardo</title>
+    <meta name="description" content="Case técnico da Rikka, uma plataforma de coleção de cartas para Discord com bot, catálogo, API, processamento assíncrono e infraestrutura própria.">
+    <meta name="author" content="Leonardo Soares Tavares">
+    <meta name="theme-color" content="#0a0e27">
+    <link rel="canonical" href="https://www.leonardodev.fun/projects/rikka/">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Leonardo Dev">
+    <meta property="og:title" content="Rikka — Case de Engenharia | Leonardo">
+    <meta property="og:description" content="Case técnico da Rikka, uma plataforma de coleção de cartas para Discord com bot, catálogo, API e processamento assíncrono.">
+    <meta property="og:url" content="https://www.leonardodev.fun/projects/rikka/">
+    <meta property="og:image" content="https://rikka-website.vercel.app/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rikka — Case de Engenharia | Leonardo">
+    <meta name="twitter:description" content="Engenharia por trás de uma plataforma de coleção de cartas para Discord.">
+    <meta name="twitter:image" content="https://rikka-website.vercel.app/og-image.png">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="case.css">
+    <script src="../../shared.js"></script>
+</head>
+<body data-theme="dark" class="case-page">
+    <a class="skip-link" href="#case-content" data-case="skip">Ir para o conteúdo</a>
+    <div class="bg-animation" id="bgAnimation" aria-hidden="true"></div>
+
+    <header class="header">
+        <nav class="nav-container" aria-label="Principal">
+            <a class="logo case-logo" href="/">Leonardo Dev</a>
+            <ul class="nav-menu">
+                <li><a href="/#home" data-case="navHome">Início</a></li>
+                <li><a href="/#about" data-case="navAbout">Sobre</a></li>
+                <li><a href="/#skills" data-case="navSkills">Skills</a></li>
+                <li><a href="/#projects" data-case="navProjects">Projetos</a></li>
+                <li><a href="/#contact" data-case="navContact">Contato</a></li>
+            </ul>
+            <div class="desktop-controls">
+                <button class="desktop-theme-toggle case-icon-button" id="desktopThemeToggle" type="button" aria-label="Alternar tema"><span id="desktopThemeIcon">🌙</span></button>
+                <div class="desktop-lang-selector" id="desktopLangSelector">
+                    <button class="selected-lang case-lang-button" id="selectedLang" type="button" aria-haspopup="listbox" aria-expanded="false">
+                        <span class="lang-flag" id="selectedLangFlag">🇧🇷</span><span class="lang-name" id="selectedLangName">PT</span>
+                    </button>
+                    <ul class="lang-dropdown" id="langDropdown" role="listbox">
+                        <li data-lang="pt" role="option" tabindex="0"><span class="lang-flag">🇧🇷</span><span class="lang-name">Português</span></li>
+                        <li data-lang="en" role="option" tabindex="0"><span class="lang-flag">🇺🇸</span><span class="lang-name">English</span></li>
+                        <li data-lang="ja" role="option" tabindex="0"><span class="lang-flag">🇯🇵</span><span class="lang-name">日本語</span></li>
+                    </ul>
+                </div>
+            </div>
+            <button class="hamburger case-menu-button" id="hamburger" type="button" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        </nav>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <aside class="mobile-menu" id="mobileMenu" aria-label="Menu móvel" aria-hidden="true" inert>
+        <div class="mobile-menu-header"><a class="logo case-logo" href="/">Leonardo Dev</a><button class="close-menu" id="closeMenu" type="button" aria-label="Fechar menu">×</button></div>
+        <div class="mobile-menu-scrollable-content">
+            <nav class="mobile-nav-links">
+                <a href="/#home"><span>⌂</span><span data-case="navHome">Início</span></a>
+                <a href="/#about"><span>◇</span><span data-case="navAbout">Sobre</span></a>
+                <a href="/#skills"><span>⚡</span><span data-case="navSkills">Skills</span></a>
+                <a href="/#projects"><span>↗</span><span data-case="navProjects">Projetos</span></a>
+                <a href="/#contact"><span>✉</span><span data-case="navContact">Contato</span></a>
+            </nav>
+            <div class="mobile-controls">
+                <div class="control-group"><div class="control-label" data-case="themeLabel">Tema</div><div class="mobile-theme-toggle"><div class="theme-info"></div><button class="theme-switch" id="themeSwitch" type="button" aria-label="Alternar tema"></button></div></div>
+                <div class="control-group"><div class="control-label" data-case="languageLabel">Idioma</div><div class="mobile-lang-selector">
+                    <button class="lang-option" data-lang="pt" type="button"><span class="lang-flag">🇧🇷</span><span class="lang-name">Português</span></button>
+                    <button class="lang-option" data-lang="en" type="button"><span class="lang-flag">🇺🇸</span><span class="lang-name">English</span></button>
+                    <button class="lang-option" data-lang="ja" type="button"><span class="lang-flag">🇯🇵</span><span class="lang-name">日本語</span></button>
+                </div></div>
+            </div>
+        </div>
+    </aside>
+
+    <main id="case-content" class="case-main">
+        <section class="case-hero case-container">
+            <div class="case-hero-copy reveal">
+                <p class="case-eyebrow"><span>✦</span> <span data-case="heroEyebrow">CASE STUDY / PROJETO</span></p>
+                <h1>Rikka</h1>
+                <p class="case-lead" data-case="heroLead">Uma plataforma de coleção de cartas para Discord construída como um ecossistema de bot, serviços, catálogo, API, ferramentas administrativas e experiência web.</p>
+                <dl class="case-meta">
+                    <div><dt data-case="roleLabel">Papel</dt><dd data-case="roleValue">Desenvolvimento Full Stack / Arquitetura</dd></div>
+                    <div><dt data-case="statusLabel">Status</dt><dd><span class="status-dot" aria-hidden="true"></span><span data-case="statusValue">Projeto ativo</span></dd></div>
+                    <div><dt data-case="codeLabel">Código</dt><dd data-case="codeValue">Núcleo privado</dd></div>
+                    <div><dt data-case="websiteLabel">Website</dt><dd data-case="websiteValue">Público</dd></div>
+                </dl>
+                <div class="case-actions">
+                    <a class="cta-button" href="https://rikka-website.vercel.app/" target="_blank" rel="noopener noreferrer"><span data-case="visitRikka">Visitar Rikka</span><span aria-hidden="true">↗</span></a>
+                    <a class="cta-button secondary" href="/#projects"><span data-case="backProjects">Voltar aos projetos</span><span aria-hidden="true">←</span></a>
+                </div>
+                <p class="private-note"><span aria-hidden="true">◉</span> <span data-case="privateShort">Core source code: privado</span></p>
+            </div>
+            <div class="case-hero-visual reveal" aria-label="Preview público do website da Rikka" data-case-aria="previewLabel">
+                <div class="case-browser">
+                    <div class="case-browser-bar"><span class="browser-dot browser-dot-red"></span><span class="browser-dot browser-dot-yellow"></span><span class="browser-dot browser-dot-green"></span><span>rikka-website.vercel.app</span></div>
+                    <div class="case-preview-frame"><iframe src="https://rikka-website.vercel.app/" title="Preview do website público da Rikka" data-case-title="previewLabel" tabindex="-1" loading="eager"></iframe></div>
+                </div>
+                <div class="orbit-label orbit-one">BOT</div><div class="orbit-label orbit-two">API</div><div class="orbit-label orbit-three">WEB</div>
+            </div>
+        </section>
+
+        <section class="case-section case-container overview-grid">
+            <div class="section-heading reveal"><p class="section-kicker" data-case="overviewKicker">VISÃO GERAL</p><h2 data-case="overviewTitle">O que é a Rikka?</h2></div>
+            <div class="overview-copy reveal"><p data-case="overviewP1">A Rikka é uma plataforma de coleção de cartas integrada ao Discord. Usuários recebem drops, colecionam personagens de animes e jogos, organizam suas coleções, usam wishlist e realizam trocas.</p><p data-case="overviewP2">Por trás dessa experiência existe uma arquitetura formada por serviços de jogo, catálogo próprio, API, índices derivados, ferramentas administrativas e um website público.</p></div>
+        </section>
+
+        <section class="case-section case-container role-section">
+            <div class="section-heading reveal"><p class="section-kicker" data-case="roleKicker">CONTRIBUIÇÃO</p><h2 data-case="roleTitle">Meu papel no projeto</h2><p data-case="roleIntro">Desenvolvi a experiência como um sistema completo, conectando produto, domínio, dados e operação.</p></div>
+            <div class="role-list reveal">
+                <span data-case="roleBot">Bot e lógica de domínio</span><span data-case="roleBackend">Backend e APIs</span><span data-case="roleData">Modelagem e persistência</span><span data-case="roleCatalog">Catálogo e busca</span><span data-case="roleAdmin">Ferramentas administrativas</span><span data-case="roleWeb">Website</span><span data-case="roleOps">Deploy e operação</span>
+            </div>
+        </section>
+
+        <section class="case-section architecture-section">
+            <div class="case-container"><div class="section-heading centered reveal"><p class="section-kicker" data-case="architectureKicker">SISTEMA</p><h2 data-case="architectureTitle">Arquitetura</h2><p data-case="architectureIntro">Uma visão conceitual dos blocos que sustentam a experiência, sem expor a implementação privada.</p></div>
+                <div class="architecture-diagram reveal" role="img" aria-label="Fluxo conceitual da arquitetura da Rikka" data-case-aria="architectureAlt">
+                    <div class="architecture-node node-discord"><small data-case="interaction">INTERAÇÃO</small><strong>Discord</strong></div>
+                    <div class="architecture-node node-bot featured"><small data-case="core">NÚCLEO</small><strong>Rikka Bot</strong><span data-case="gameServices">Serviços de jogo</span></div>
+                    <div class="architecture-node node-users"><small data-case="state">ESTADO</small><strong data-case="userData">Dados do usuário</strong></div>
+                    <div class="architecture-node node-api"><small data-case="distribution">DISTRIBUIÇÃO</small><strong>Catalog API</strong></div>
+                    <div class="architecture-node node-catalog"><small data-case="content">CONTEÚDO</small><strong data-case="catalogIndexes">Catálogo + índices</strong></div>
+                    <div class="architecture-node node-website"><small data-case="publicExperience">EXPERIÊNCIA PÚBLICA</small><strong>Website</strong></div>
+                    <div class="architecture-node node-admin"><small data-case="operation">OPERAÇÃO</small><strong data-case="adminTools">Painel · Workers · Akane</strong></div>
+                    <div class="architecture-connector connector-one" aria-hidden="true"></div><div class="architecture-connector connector-two" aria-hidden="true"></div><div class="architecture-connector connector-three" aria-hidden="true"></div><div class="architecture-connector connector-four" aria-hidden="true"></div><div class="architecture-connector connector-five" aria-hidden="true"></div>
+                    <span class="async-label" data-case="asyncConsistency">consistência assíncrona</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-section case-container">
+            <div class="section-heading reveal"><p class="section-kicker" data-case="componentsKicker">ECOSSISTEMA</p><h2 data-case="componentsTitle">Principais componentes</h2></div>
+            <div class="component-grid">
+                <article class="component-card reveal"><span>01</span><h3 data-case="componentBotTitle">Bot & domínio de jogo</h3><p data-case="componentBotText">Interações no Discord, drops, coleção, wishlist, trades e economia formam o núcleo da experiência.</p></article>
+                <article class="component-card reveal"><span>02</span><h3 data-case="componentCatalogTitle">Catálogo & API</h3><p data-case="componentCatalogText">Personagens, obras e edições são organizados em um catálogo com busca, índices e distribuição controlada.</p></article>
+                <article class="component-card reveal"><span>03</span><h3 data-case="componentAdminTitle">Administração</h3><p data-case="componentAdminText">Painel, imports, revisões, workers e Akane sustentam os fluxos operacionais privados.</p></article>
+                <article class="component-card reveal"><span>04</span><h3 data-case="componentWebTitle">Experiência web</h3><p data-case="componentWebText">O website público apresenta o produto e integra autenticação pelo Discord em uma experiência responsiva.</p></article>
+            </div>
+        </section>
+
+        <section class="case-section challenges-section">
+            <div class="case-container"><div class="section-heading centered reveal"><p class="section-kicker" data-case="challengesKicker">DECISÕES TÉCNICAS</p><h2 data-case="challengesTitle">Desafios de engenharia</h2><p data-case="challengesIntro">Quatro problemas reais que moldaram a arquitetura da Rikka.</p></div>
+                <div class="challenge-list">
+                    <article class="challenge reveal"><div class="challenge-copy"><span class="challenge-number">01</span><h3 data-case="challenge1Title">Busca e drops sem varrer o catálogo</h3><div class="challenge-step"><b data-case="problem">Problema</b><p data-case="challenge1Problem">Consultas frequentes e seleção de drops não deveriam depender de scans completos do banco.</p></div><div class="challenge-step"><b data-case="decision">Decisão</b><p data-case="challenge1Decision">Transferir parte do custo para quando o catálogo muda e manter o caminho frequente previsível.</p></div><div class="challenge-step"><b data-case="solution">Solução</b><p data-case="challenge1Solution">Projeções materializadas: dados normalizados para busca e uma estrutura hierárquica ponderada para drops.</p></div></div><div class="challenge-visual index-visual" aria-hidden="true"><span>CATALOG</span><i></i><div><b>SEARCH</b><b>DROP</b></div><small>SNAPSHOTS</small></div></article>
+                    <article class="challenge reverse reveal"><div class="challenge-copy"><span class="challenge-number">02</span><h3 data-case="challenge2Title">Operar quando o catálogo não responde</h3><div class="challenge-step"><b data-case="problem">Problema</b><p data-case="challenge2Problem">Consultar um serviço externo em cada comando aumentaria latência, leituras e acoplamento à disponibilidade.</p></div><div class="challenge-step"><b data-case="decision">Decisão</b><p data-case="challenge2Decision">Usar uma visão local validada e atualizar somente quando a versão do catálogo muda.</p></div><div class="challenge-step"><b data-case="solution">Solução</b><p data-case="challenge2Solution">Snapshots locais, validação antes da troca, versionamento, ETag e retry com backoff. Uma falha mantém o último snapshot válido.</p></div></div><div class="challenge-visual snapshot-visual" aria-hidden="true"><div class="snapshot active">VALID</div><div class="snapshot incoming">NEW</div><span>✓</span><small>ATOMIC SWAP</small></div></article>
+                    <article class="challenge featured-challenge reveal"><div class="challenge-copy"><span class="challenge-number">03</span><h3 data-case="challenge3Title">Consistência sem transação distribuída</h3><div class="challenge-step"><b data-case="problem">Problema</b><p data-case="challenge3Problem">Um claim persiste a carta no estado do usuário e também atualiza informações pertencentes ao catálogo, em domínios de dados distintos.</p></div><div class="challenge-step"><b data-case="decision">Decisão</b><p data-case="challenge3Decision">Priorizar o commit da carta e tratar a atualização remota como consistência assíncrona e idempotente.</p></div><div class="challenge-step"><b data-case="solution">Solução</b><p data-case="challenge3Solution">Uma estratégia semelhante ao padrão Transactional Outbox: evento persistido com a operação principal, recibo, retries e reconciliação.</p></div><p class="challenge-result" data-case="challenge3Result">Falhas temporárias do catálogo não invalidam a carta; reprocessamentos não duplicam o contador.</p></div><div class="challenge-visual outbox-visual" aria-hidden="true"><b>CARD</b><span>+</span><b>EVENT</b><i>→</i><strong>CATALOG</strong><small>RETRY · RECEIPT · RECONCILE</small></div></article>
+                    <article class="challenge reverse reveal"><div class="challenge-copy"><span class="challenge-number">04</span><h3 data-case="challenge4Title">Processamento administrativo recuperável</h3><div class="challenge-step"><b data-case="problem">Problema</b><p data-case="challenge4Problem">Imports, imagens e exclusões podem durar além de uma requisição e ser interrompidos.</p></div><div class="challenge-step"><b data-case="decision">Decisão</b><p data-case="challenge4Decision">Separar submissão, execução e acompanhamento para não bloquear a interface administrativa.</p></div><div class="challenge-step"><b data-case="solution">Solução</b><p data-case="challenge4Solution">Fila persistida, estados, progresso, recuperação, retry, histórico e desligamento gracioso.</p></div></div><div class="challenge-visual queue-visual" aria-hidden="true"><b>SUBMIT</b><i>→</i><b>PROCESS</b><i>→</i><b>TRACK</b><small>PERSISTED QUEUE</small></div></article>
+                </div>
+                <aside class="integrity-callout reveal"><span>↔</span><div><h3 data-case="integrityTitle">Concorrência e integridade</h3><p data-case="integrityText">Claims concorrentes, reserva de seriais e trades usam transações e validações dentro da fronteira transacional para evitar estados parciais.</p></div></aside>
+            </div>
+        </section>
+
+        <section class="case-section case-container stack-section">
+            <div class="section-heading reveal"><p class="section-kicker">STACK</p><h2 data-case="stackTitle">Tecnologia por responsabilidade</h2><p data-case="stackIntro">Cada ferramenta aparece onde resolve um problema concreto do sistema.</p></div>
+            <div class="stack-grid reveal">
+                <div><h3>BOT</h3><p>Node.js · Discord.js · Firestore</p></div><div><h3>CATALOG / BACKEND</h3><p>Node.js · Express · Firestore</p></div><div><h3>ADMIN</h3><p>Express · EJS · Firebase Admin</p></div><div><h3>WEB</h3><p>Next.js · React · Material UI</p></div><div><h3 data-case="infra">INFRA / OPERAÇÃO</h3><p>PM2 · Vercel · Railway</p></div><div><h3 data-case="integrations">INTEGRAÇÕES</h3><p>Discord · Top.gg · Cloudinary</p></div>
+            </div>
+        </section>
+
+        <section class="case-section case-container quality-section">
+            <div class="quality-panel reveal"><div><p class="section-kicker" data-case="qualityKicker">ALÉM DAS FEATURES</p><h2 data-case="qualityTitle">Qualidade e confiabilidade</h2><p data-case="qualityText">A base do projeto combina testes automatizados, transações, idempotência, retries, reconciliação, filas persistidas, snapshots, migrações e instrumentação de operações.</p></div><ul><li data-case="quality1">Testes nos fluxos críticos</li><li data-case="quality2">Falhas tratadas como parte do fluxo</li><li data-case="quality3">Dados derivados reconstruíveis</li><li data-case="quality4">Operações administrativas auditáveis</li></ul></div>
+        </section>
+
+        <section class="case-section case-container private-section">
+            <div class="private-panel reveal"><span class="lock-mark" aria-hidden="true">◇</span><div><p class="section-kicker" data-case="privateKicker">ESCOPO PÚBLICO</p><h2 data-case="privateTitle">O núcleo operacional permanece privado.</h2><p data-case="privateText">O website possui um repositório público. O código do bot, dos serviços internos e das ferramentas administrativas não é distribuído publicamente.</p></div><a class="project-link" href="https://github.com/Rikka-Bot/rikka-website" target="_blank" rel="noopener noreferrer"><span data-case="websiteSource">Código do website</span><span>↗</span></a></div>
+        </section>
+
+        <section class="case-final">
+            <div class="case-container reveal"><p class="section-kicker" data-case="finalKicker">RIKKA EM AÇÃO</p><h2 data-case="finalTitle">Quer ver a parte pública funcionando?</h2><p data-case="finalText">Conheça a experiência web ou explore o código público do website.</p><div class="case-actions centered-actions"><a class="cta-button" href="https://rikka-website.vercel.app/" target="_blank" rel="noopener noreferrer"><span data-case="visitRikka">Visitar Rikka</span><span>↗</span></a><a class="cta-button secondary" href="https://github.com/Rikka-Bot/rikka-website" target="_blank" rel="noopener noreferrer"><span data-case="githubWebsite">Website no GitHub</span><span>↗</span></a><a class="text-link" href="/#projects"><span data-case="backProjects">Voltar aos projetos</span> ←</a></div></div>
+        </section>
+    </main>
+
+    <footer class="footer"><div class="footer-container"><div class="footer-content"><div class="footer-logo"><a class="logo case-logo" href="/">Leonardo Dev</a><p class="footer-tagline" data-case="footerTagline">Criando o futuro, uma linha de código por vez</p></div><div class="footer-links"><div class="footer-section"><h4 data-case="footerNavigation">Navegação</h4><ul><li><a href="/#home" data-case="navHome">Início</a></li><li><a href="/#about" data-case="navAbout">Sobre</a></li><li><a href="/#projects" data-case="navProjects">Projetos</a></li></ul></div><div class="footer-section"><h4 data-case="footerConnect">Conecte-se</h4><ul><li><a href="mailto:contact@leonardodev.fun">Email</a></li><li><a href="https://www.linkedin.com/in/leonardo-soares-tavares-26232a229/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li><li><a href="https://github.com/Leonardo-ST" target="_blank" rel="noopener noreferrer">GitHub</a></li></ul></div></div></div><div class="footer-bottom"><div class="footer-divider"></div><div class="footer-credits"><p>&copy; 2026 Leonardo S. Tavares. <span data-case="footerRights">Todos os direitos reservados.</span></p></div></div></div></footer>
+    <script src="case.js"></script>
+</body>
+</html>
