@@ -64,9 +64,10 @@ document.addEventListener('DOMContentLoaded', () => {
             'about-passion': 'UI/UX e Performance', 'about-focus': 'React & Next.js', 'skills-title': 'Minhas Skills',
             'skill1-desc': 'Desenvolvimento com as principais bibliotecas e frameworks modernos', 'skill2-desc': 'Criação de interfaces intuitivas e experiências de usuário excepcionais',
             'skill3-desc': 'Desenvolvimento de aplicações que funcionam perfeitamente em todos os dispositivos', 'skill4-desc': 'Otimização de aplicações para máxima velocidade e eficiência',
-            'projects-title': 'Meus Projetos', 'project1-title': 'Torre de Hanói 3D', 'project1-desc': 'Visualização 3D interativa do clássico problema da Torre de Hanói, criada para demonstrar lógica, algoritmos e interação em tempo real.',
-            'project2-title': 'Rikka', 'project2-desc': 'Site oficial da Rikka, um bot de coleção de cartas para Discord com personagens de animes e jogos, drops, diferentes edições, wishlist e trades.',
-            'project3-title': 'Music Player App', 'project3-desc': 'Player de música moderno com playlists personalizadas, visualizador de áudio e controles avançados.',
+            'projects-title': 'Meus Projetos',
+            'projects-hanoi-title': 'Torre de Hanói 3D', 'projects-hanoi-description': 'Visualização 3D interativa do clássico problema da Torre de Hanói, criada para demonstrar lógica, algoritmos e interação em tempo real.',
+            'projects-music-player-title': 'Music Player App', 'projects-music-player-description': 'Player de música moderno com playlists personalizadas, visualizador de áudio e controles avançados.',
+            'projects-rikka-title': 'Rikka', 'projects-rikka-description': 'Site oficial da Rikka, um bot de coleção de cartas para Discord com personagens de animes e jogos, drops, diferentes edições, wishlist e trades.',
             'contact-title': 'Vamos trabalhar juntos?', 'contact-description': 'Estou sempre aberto a novos projetos e oportunidades. Entre em contato!',
             'footer-tagline': 'Criando o futuro, uma linha de código por vez', 'footer-navigation': 'Navegação', 'footer-connect': 'Conecte-se',
             'footer-rights': 'Todos os direitos reservados.', 'footer-designed': 'Designed by', 'theme-label': 'Tema', 'language-label': 'Idioma',
@@ -81,9 +82,10 @@ document.addEventListener('DOMContentLoaded', () => {
             'about-passion': 'UI/UX & Performance', 'about-focus': 'React & Next.js', 'skills-title': 'My Skills',
             'skill1-desc': 'Development with the main modern libraries and frameworks', 'skill2-desc': 'Creating intuitive interfaces and exceptional user experiences',
             'skill3-desc': 'Developing applications that work perfectly on all devices', 'skill4-desc': 'Application optimization for maximum speed and efficiency',
-            'projects-title': 'My Projects', 'project1-title': '3D Tower of Hanoi', 'project1-desc': 'An interactive 3D visualization of the classic Tower of Hanoi problem, designed to demonstrate logic, algorithms, and real-time interaction.',
-            'project2-title': 'Rikka', 'project2-desc': 'Official website for Rikka, a Discord card collection bot featuring characters from anime and games, with drops, multiple editions, wishlists, and trades.',
-            'project3-title': 'Music Player App', 'project3-desc': 'Modern music player with custom playlists, audio visualizer and advanced controls.',
+            'projects-title': 'My Projects',
+            'projects-hanoi-title': '3D Tower of Hanoi', 'projects-hanoi-description': 'An interactive 3D visualization of the classic Tower of Hanoi problem, designed to demonstrate logic, algorithms, and real-time interaction.',
+            'projects-music-player-title': 'Music Player App', 'projects-music-player-description': 'Modern music player with custom playlists, audio visualizer and advanced controls.',
+            'projects-rikka-title': 'Rikka', 'projects-rikka-description': 'Official website for Rikka, a Discord card collection bot featuring characters from anime and games, with drops, multiple editions, wishlists, and trades.',
             'contact-title': 'Let\'s work together?', 'contact-description': 'I\'m always open to new projects and opportunities. Get in touch!',
             'footer-tagline': 'Building the future, one line of code at a time', 'footer-navigation': 'Navigation', 'footer-connect': 'Connect',
             'footer-rights': 'All rights reserved.', 'footer-designed': 'Designed by', 'theme-label': 'Theme', 'language-label': 'Language',
@@ -98,9 +100,10 @@ document.addEventListener('DOMContentLoaded', () => {
             'about-passion': 'UI/UXとパフォーマンス', 'about-focus': 'React & Next.js', 'skills-title': '私のスキル',
             'skill1-desc': '主要な最新ライブラリとフレームワークでの開発', 'skill2-desc': '直感的なインターフェースと優れたユーザーエクスペリエンスの作成',
             'skill3-desc': 'すべてのデバイスで完璧に動作するアプリケーションの開発', 'skill4-desc': '最大速度と効率のためのアプリケーション最適化',
-            'projects-title': '私のプロジェクト', 'project1-title': '3Dハノイの塔', 'project1-desc': '古典的なハノイの塔をインタラクティブな3Dで可視化し、論理、アルゴリズム、リアルタイム操作を体験できるプロジェクトです。',
-            'project2-title': 'Rikka', 'project2-desc': 'アニメやゲームのキャラクターカードを集めるDiscordボット「Rikka」の公式サイト。ドロップ、複数のエディション、ウィッシュリスト、トレード機能に対応しています。',
-            'project3-title': 'ミュージックプレーヤーアプリ', 'project3-desc': 'カスタムプレイリスト、オーディオビジュアライザー、高度なコントロールを備えたモダンなミュージックプレーヤー。',
+            'projects-title': '私のプロジェクト',
+            'projects-hanoi-title': '3Dハノイの塔', 'projects-hanoi-description': '古典的なハノイの塔をインタラクティブな3Dで可視化し、論理、アルゴリズム、リアルタイム操作を体験できるプロジェクトです。',
+            'projects-music-player-title': 'ミュージックプレーヤーアプリ', 'projects-music-player-description': 'カスタムプレイリスト、オーディオビジュアライザー、高度なコントロールを備えたモダンなミュージックプレーヤー。',
+            'projects-rikka-title': 'Rikka', 'projects-rikka-description': 'アニメやゲームのキャラクターカードを集めるDiscordボット「Rikka」の公式サイト。ドロップ、複数のエディション、ウィッシュリスト、トレード機能に対応しています。',
             'contact-title': '一緒に働きませんか？', 'contact-description': '新しいプロジェクトや機会には常にオープンです。お気軽にお問い合わせください！',
             'footer-tagline': '一行のコードずつ、未来を創造', 'footer-navigation': 'ナビゲーション', 'footer-connect': '接続',
             'footer-rights': '全著作権所有。', 'footer-designed': 'Designed by', 'theme-label': 'テーマ', 'language-label': '言語',
@@ -109,21 +112,24 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
 
+    const fallbackLanguage = 'pt';
+
     // Funções
     // Idioma
     function setLanguage(lang) {
-        currentLang = lang;
-        document.documentElement.lang = lang;
+        currentLang = translations[lang] ? lang : fallbackLanguage;
+        document.documentElement.lang = currentLang;
 
     
         document.querySelectorAll('[data-translate]').forEach(el => {
             const key = el.getAttribute('data-translate');
-            if (translations[lang] && translations[lang][key]) {
+            const translation = translations[currentLang][key] ?? translations[fallbackLanguage][key];
+            if (translation) {
     
                 if (el.classList.contains('string')) {
-                    el.textContent = `"${translations[lang][key]}"`;
+                    el.textContent = `"${translation}"`;
                 } else {
-                    el.textContent = translations[lang][key];
+                    el.textContent = translation;
                 }
             }
         });
