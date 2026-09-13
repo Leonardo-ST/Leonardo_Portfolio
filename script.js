@@ -1,39 +1,41 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    const rikkaCard = document.querySelector('.project-card-rikka');
-    const rikkaFrame = document.querySelector('.project-live-iframe');
-    const rikkaFrameWrapper = document.querySelector('.live-preview-frame');
-    const rikkaFallback = document.querySelector('.project-image-fallback');
+    const livePreviewCards = document.querySelectorAll('.project-card-live-preview');
 
-    function resizeRikkaPreview() {
-        if (!rikkaCard || !rikkaFrame || !rikkaFrameWrapper || !rikkaFallback) {
-            return;
-        }
+    function resizeLivePreviews() {
+        livePreviewCards.forEach(card => {
+            const frame = card.querySelector('.project-live-iframe');
+            const frameWrapper = card.querySelector('.live-preview-frame');
+            const projectImage = card.querySelector('.project-image');
 
-        const cardWidth = rikkaCard.querySelector('.project-image').getBoundingClientRect().width;
-        const baseWidth = 1440;
-        const scale = Math.max(0.2, Math.min(1, cardWidth / baseWidth));
+            if (!frame || !frameWrapper || !projectImage) return;
 
-        rikkaFrame.width = baseWidth;
-        rikkaFrame.height = 900;
-        rikkaFrameWrapper.style.width = `${baseWidth}px`;
-        rikkaFrameWrapper.style.height = `${900}px`;
-        rikkaFrameWrapper.style.transform = `scale(${scale})`;
-        rikkaFrameWrapper.style.transformOrigin = 'top left';
-    }
+            const cardWidth = projectImage.getBoundingClientRect().width;
+            const baseWidth = 1440;
+            const baseHeight = 900;
+            const scale = Math.max(0.2, Math.min(1, cardWidth / baseWidth));
 
-    if (rikkaFrame) {
-        rikkaFrame.addEventListener('load', () => {
-            rikkaFallback.classList.remove('visible');
-        });
-
-        rikkaFrame.addEventListener('error', () => {
-            rikkaFallback.classList.add('visible');
+            frame.width = baseWidth;
+            frame.height = baseHeight;
+            frameWrapper.style.width = `${baseWidth}px`;
+            frameWrapper.style.height = `${baseHeight}px`;
+            frameWrapper.style.transform = `scale(${scale})`;
+            frameWrapper.style.transformOrigin = 'top left';
         });
     }
 
-    resizeRikkaPreview();
-    window.addEventListener('resize', resizeRikkaPreview);
+    livePreviewCards.forEach(card => {
+        const frame = card.querySelector('.project-live-iframe');
+        const fallback = card.querySelector('.project-image-fallback');
+
+        if (!frame || !fallback) return;
+
+        frame.addEventListener('load', () => fallback.classList.remove('visible'));
+        frame.addEventListener('error', () => fallback.classList.add('visible'));
+    });
+
+    resizeLivePreviews();
+    window.addEventListener('resize', resizeLivePreviews);
 
     let currentLang = 'pt';
     let currentTheme = 'dark'
@@ -62,8 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'about-passion': 'UI/UX e Performance', 'about-focus': 'React & Next.js', 'skills-title': 'Minhas Skills',
             'skill1-desc': 'Desenvolvimento com as principais bibliotecas e frameworks modernos', 'skill2-desc': 'Criação de interfaces intuitivas e experiências de usuário excepcionais',
             'skill3-desc': 'Desenvolvimento de aplicações que funcionam perfeitamente em todos os dispositivos', 'skill4-desc': 'Otimização de aplicações para máxima velocidade e eficiência',
-            'projects-title': 'Meus Projetos', 'project1-title': 'E-commerce Moderno', 'project1-desc': 'Plataforma de e-commerce completa com carrinho de compras, sistema de pagamento e painel administrativo.',
-            'project2-title': 'Dashboard Analytics', 'project2-desc': 'Dashboard interativo para visualização de dados com gráficos dinâmicos e relatórios em tempo real.',
+            'projects-title': 'Meus Projetos', 'project1-title': 'Torre de Hanói 3D', 'project1-desc': 'Visualização 3D interativa do clássico problema da Torre de Hanói, criada para demonstrar lógica, algoritmos e interação em tempo real.',
+            'project2-title': 'Rikka', 'project2-desc': 'Site oficial da Rikka, um bot de coleção de cartas para Discord com personagens de animes e jogos, drops, diferentes edições, wishlist e trades.',
             'project3-title': 'Music Player App', 'project3-desc': 'Player de música moderno com playlists personalizadas, visualizador de áudio e controles avançados.',
             'contact-title': 'Vamos trabalhar juntos?', 'contact-description': 'Estou sempre aberto a novos projetos e oportunidades. Entre em contato!',
             'footer-tagline': 'Criando o futuro, uma linha de código por vez', 'footer-navigation': 'Navegação', 'footer-connect': 'Conecte-se',
@@ -79,8 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'about-passion': 'UI/UX & Performance', 'about-focus': 'React & Next.js', 'skills-title': 'My Skills',
             'skill1-desc': 'Development with the main modern libraries and frameworks', 'skill2-desc': 'Creating intuitive interfaces and exceptional user experiences',
             'skill3-desc': 'Developing applications that work perfectly on all devices', 'skill4-desc': 'Application optimization for maximum speed and efficiency',
-            'projects-title': 'My Projects', 'project1-title': 'Modern E-commerce', 'project1-desc': 'Complete e-commerce platform with shopping cart, payment system and administrative panel.',
-            'project2-title': 'Analytics Dashboard', 'project2-desc': 'Interactive dashboard for data visualization with dynamic charts and real-time reports.',
+            'projects-title': 'My Projects', 'project1-title': '3D Tower of Hanoi', 'project1-desc': 'An interactive 3D visualization of the classic Tower of Hanoi problem, designed to demonstrate logic, algorithms, and real-time interaction.',
+            'project2-title': 'Rikka', 'project2-desc': 'Official website for Rikka, a Discord card collection bot featuring characters from anime and games, with drops, multiple editions, wishlists, and trades.',
             'project3-title': 'Music Player App', 'project3-desc': 'Modern music player with custom playlists, audio visualizer and advanced controls.',
             'contact-title': 'Let\'s work together?', 'contact-description': 'I\'m always open to new projects and opportunities. Get in touch!',
             'footer-tagline': 'Building the future, one line of code at a time', 'footer-navigation': 'Navigation', 'footer-connect': 'Connect',
@@ -96,8 +98,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'about-passion': 'UI/UXとパフォーマンス', 'about-focus': 'React & Next.js', 'skills-title': '私のスキル',
             'skill1-desc': '主要な最新ライブラリとフレームワークでの開発', 'skill2-desc': '直感的なインターフェースと優れたユーザーエクスペリエンスの作成',
             'skill3-desc': 'すべてのデバイスで完璧に動作するアプリケーションの開発', 'skill4-desc': '最大速度と効率のためのアプリケーション最適化',
-            'projects-title': '私のプロジェクト', 'project1-title': 'モダンEコマース', 'project1-desc': 'ショッピングカート、決済システム、管理パネルを備えた完全なEコマースプラットフォーム。',
-            'project2-title': 'アナリティクスダッシュボード', 'project2-desc': '動的チャートとリアルタイムレポートを備えたデータ可視化用インタラクティブダッシュボード。',
+            'projects-title': '私のプロジェクト', 'project1-title': '3Dハノイの塔', 'project1-desc': '古典的なハノイの塔をインタラクティブな3Dで可視化し、論理、アルゴリズム、リアルタイム操作を体験できるプロジェクトです。',
+            'project2-title': 'Rikka', 'project2-desc': 'アニメやゲームのキャラクターカードを集めるDiscordボット「Rikka」の公式サイト。ドロップ、複数のエディション、ウィッシュリスト、トレード機能に対応しています。',
             'project3-title': 'ミュージックプレーヤーアプリ', 'project3-desc': 'カスタムプレイリスト、オーディオビジュアライザー、高度なコントロールを備えたモダンなミュージックプレーヤー。',
             'contact-title': '一緒に働きませんか？', 'contact-description': '新しいプロジェクトや機会には常にオープンです。お気軽にお問い合わせください！',
             'footer-tagline': '一行のコードずつ、未来を創造', 'footer-navigation': 'ナビゲーション', 'footer-connect': '接続',
@@ -268,6 +270,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // =========================================================================
     // INITIALIZATION
     // =========================================================================
+    setLanguage(currentLang);
     autoSetLanguage();
     setInterval(createFloatingCode, 2000);
 

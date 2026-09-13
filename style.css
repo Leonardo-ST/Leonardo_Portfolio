@@ -22,6 +22,9 @@ body {
     --border: #2d3748;
     --code-bg: #0f1419;
     --shadow: rgba(100, 255, 218, 0.1);
+    --project-browser-bg: rgba(15, 23, 42, 0.82);
+    --project-browser-border: var(--border);
+    --project-browser-text: var(--text-secondary);
 }
 
 [data-theme="light"] {
@@ -38,6 +41,9 @@ body {
     --border: #e2e8f0;
     --code-bg: #f1f5f9;
     --shadow: rgba(8, 145, 178, 0.1);
+    --project-browser-bg: rgba(241, 245, 249, 0.96);
+    --project-browser-border: var(--border);
+    --project-browser-text: var(--text-secondary);
 }
 
 body {
@@ -751,8 +757,8 @@ body {
     left: 0;
     right: 0;
     height: 34px;
-    background: rgba(15, 23, 42, 0.82);
-    border-bottom: 1px solid var(--border);
+    background: var(--project-browser-bg);
+    border-bottom: 1px solid var(--project-browser-border);
     display: flex;
     align-items: center;
     gap: 0.35rem;
@@ -762,6 +768,7 @@ body {
 .browser-dot {
     width: 8px;
     height: 8px;
+    flex: 0 0 8px;
     border-radius: 50%;
     background: var(--text-secondary);
 }
@@ -772,15 +779,24 @@ body {
 
 .browser-address {
     margin-left: auto;
-    color: var(--text-secondary);
+    min-width: 0;
+    overflow: hidden;
+    color: var(--project-browser-text);
     font-size: 0.7rem;
     letter-spacing: 0.04em;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
-
 .live-preview-frame {
     position: absolute;
     inset: 34px 0 0 0;
     transform-origin: top left;
+}
+
+.project-static-preview {
+    position: absolute;
+    inset: 34px 0 0 0;
 }
 
 .project-live-iframe {
@@ -808,7 +824,7 @@ body {
     transition: opacity 0.3s ease;
 }
 
-.project-card-rikka .project-image-fallback.visible {
+.project-card-live-preview .project-image-fallback.visible {
     opacity: 1;
     visibility: visible;
 }

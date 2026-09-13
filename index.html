@@ -259,25 +259,48 @@
             <section id="projects" class="section">
                 <h2 class="section-title" data-translate="projects-title">Meus Projetos</h2>
                 <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-image">🛍️</div>
+                    <div class="project-card project-card-live-preview project-card-hanoi">
+                        <div class="project-image project-image-hanoi">
+                            <div class="live-preview-shell">
+                                <div class="live-preview-browser">
+                                    <span class="browser-dot browser-dot-red"></span>
+                                    <span class="browser-dot browser-dot-yellow"></span>
+                                    <span class="browser-dot browser-dot-green"></span>
+                                    <span class="browser-address">hanoi-tower-3d.vercel.app</span>
+                                </div>
+                                <div class="live-preview-frame">
+                                    <iframe class="project-live-iframe"
+                                        src="https://hanoi-tower-3d.vercel.app/"
+                                        title="Preview ao vivo da Torre de Hanói 3D"
+                                        loading="lazy"
+                                        tabindex="-1"
+                                        scrolling="no"
+                                        referrerpolicy="no-referrer">
+                                    </iframe>
+                                </div>
+                                <div class="project-image-fallback">
+                                    <span class="fallback-icon">🧩</span>
+                                    <span class="fallback-title" data-translate="project1-title">Torre de Hanói 3D</span>
+                                </div>
+                            </div>
+                        </div>
                         <div class="project-content">
-                            <h3 class="project-title" data-translate="project1-title">E-commerce Moderno</h3>
+                            <h3 class="project-title" data-translate="project1-title">Torre de Hanói 3D</h3>
                             <p class="project-description" data-translate="project1-desc">
-                                Plataforma de e-commerce completa com carrinho de compras, sistema de pagamento e painel administrativo.
+                                Visualização 3D interativa do clássico problema da Torre de Hanói, criada para demonstrar lógica, algoritmos e interação em tempo real.
                             </p>
                             <div class="project-tech">
                                 <span class="tech-tag">React</span>
-                                <span class="tech-tag">Redux</span>
-                                <span class="tech-tag">Stripe</span>
-                                <span class="tech-tag">Tailwind</span>
+                                <span class="tech-tag">Three.js</span>
+                                <span class="tech-tag">React Three Fiber</span>
+                                <span class="tech-tag">Vite</span>
                             </div>
                             <div class="project-links">
-                                <a href="#" class="project-link">
+                                <a href="https://hanoi-tower-3d.vercel.app/" class="project-link" target="_blank" rel="noopener noreferrer">
                                     <span>🔗</span>
                                     <span>Demo</span>
                                 </a>
-                                <a href="#" class="project-link">
+                                <a href="https://github.com/Leonardo-ST/hanoi-tower-3d" class="project-link" target="_blank" rel="noopener noreferrer">
                                     <span>📁</span>
                                     <span>GitHub</span>
                                 </a>
@@ -285,9 +308,19 @@
                         </div>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card project-card-static-preview">
                         <div class="project-image">
-                            <img src="images/music-player-photo.png" alt="Music Player App Screenshot">
+                            <div class="live-preview-shell">
+                                <div class="live-preview-browser">
+                                    <span class="browser-dot browser-dot-red"></span>
+                                    <span class="browser-dot browser-dot-yellow"></span>
+                                    <span class="browser-dot browser-dot-green"></span>
+                                    <span class="browser-address">music-player-sigma-tan-42.vercel.app</span>
+                                </div>
+                                <div class="project-static-preview">
+                                    <img src="images/music-player-photo.png" alt="Music Player App Screenshot">
+                                </div>
+                            </div>
                         </div>
                         <div class="project-content">
                             <h3 class="project-title" data-translate="project3-title">Music Player App</h3>
@@ -301,11 +334,11 @@
                                 <span class="tech-tag">CSS Modules</span>
                             </div>
                             <div class="project-links">
-                                <a href="https://music-player-sigma-tan-42.vercel.app/" class="project-link">
+                                <a href="https://music-player-sigma-tan-42.vercel.app/" class="project-link" target="_blank" rel="noopener noreferrer">
                                     <span>🔗</span>
                                     <span>Demo</span>
                                 </a>
-                                <a href="https://github.com/Leonardo-ST/music-player" class="project-link">
+                                <a href="https://github.com/Leonardo-ST/music-player" class="project-link" target="_blank" rel="noopener noreferrer">
                                     <span>📁</span>
                                     <span>GitHub</span>
                                 </a>
@@ -313,7 +346,7 @@
                         </div>
                     </div>
 
-                    <div class="project-card project-card-rikka">
+                    <div class="project-card project-card-live-preview project-card-rikka">
                         <div class="project-image project-image-rikka">
                             <div class="live-preview-shell">
                                 <div class="live-preview-browser">
@@ -334,15 +367,13 @@
                                 </div>
                                 <div class="project-image-fallback">
                                     <span class="fallback-icon">✦</span>
-                                    <span class="fallback-title">Rikka</span>
+                                    <span class="fallback-title" data-translate="project2-title">Rikka</span>
                                 </div>
                             </div>
                         </div>
                         <div class="project-content">
-                            <h3 class="project-title">Rikka Discord Bot</h3>
-                            <p class="project-description">
-                                Aplicação web feita para o discord, capaz de executar comandos e interagir com os usuários, com um design moderno e responsivo.
-                            </p>
+                            <h3 class="project-title" data-translate="project2-title">Rikka</h3>
+                            <p class="project-description" data-translate="project2-desc"></p>
                             <div class="project-tech">
                                 <span class="tech-tag">Vite</span>
                                 <span class="tech-tag">Web Experience</span>
@@ -352,9 +383,9 @@
                             <div class="project-links">
                                 <a href="https://rikka-website.vercel.app/" class="project-link" target="_blank" rel="noopener noreferrer">
                                     <span>🔗</span>
-                                    <span>Ver projeto</span>
+                                    <span>Demo</span>
                                 </a>
-                                <a href="#" class="project-link">
+                                <a href="https://github.com/Rikka-Bot/rikka-website" class="project-link" target="_blank" rel="noopener noreferrer">
                                     <span>📁</span>
                                     <span>GitHub</span>
                                 </a>
